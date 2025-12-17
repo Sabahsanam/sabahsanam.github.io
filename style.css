@@ -16,13 +16,9 @@
 }
 
 /* ---------- RESET ---------- */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -67,10 +63,7 @@ body {
   text-decoration: none;
 }
 
-.nav {
-  display: flex;
-  gap: 12px;
-}
+.nav { display: flex; gap: 12px; }
 
 .nav-link {
   text-decoration: none;
@@ -121,9 +114,7 @@ body {
   color: var(--purple);
 }
 
-.btn.ghost:hover {
-  background: var(--panel);
-}
+.btn.ghost:hover { background: var(--panel); }
 
 .btn.outline {
   background: #ffffff;
@@ -153,48 +144,87 @@ body {
   text-align: center;
 }
 
-.hero > * {
+/* NEW: hero content wrapper (stacks lines vertically) */
+.hero-content{
   max-width: 900px;
   margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
 }
 
+/* Small line at top */
 .kicker {
   color: var(--purple);
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin: 0;
 }
 
+/* Big name */
 .hero-title {
   font-family: Poppins, sans-serif;
   font-weight: 900;
   letter-spacing: -0.05em;
   font-size: clamp(48px, 7vw, 90px);
   line-height: 0.95;
-  margin: 0 0 10px;
+  margin: 0;
 }
 
+/* Subtitle (static) */
 .hero-subtitle {
   font-family: Poppins, sans-serif;
   font-weight: 800;
   font-size: clamp(20px, 2.5vw, 32px);
   color: rgba(15, 16, 32, 0.7);
-  margin-bottom: 18px;
+  margin: 0;
 }
 
+/* Paragraph under subtitle */
 .hero-text {
   max-width: 720px;
-  margin: 0 auto 24px;
+  margin: 0;
   color: var(--muted);
   line-height: 1.7;
 }
 
+/* Buttons row */
 .hero-actions {
   display: flex;
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* ---------- NEW: Typing / Rotating Text Styles ---------- */
+/* Use this if you switch hero-subtitle to the typing version */
+.typing-text{
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+  font-size: clamp(20px, 2.5vw, 32px);
+  color: rgba(15, 16, 32, 0.75);
+  min-height: 2.6rem; /* prevents layout jump while typing */
+  margin: 0;
+}
+
+#typing{
+  color: rgba(15, 16, 32, 0.75);
+}
+
+#typing::after{
+  content: "|";
+  margin-left: 6px;
+  color: var(--purple);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink{
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
 /* ---------- SECTION TITLES ---------- */
@@ -290,13 +320,47 @@ body {
   border-radius: 999px;
 }
 
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
-  .nav {
-    display: none;
-  }
+  .nav { display: none; }
 
   .hero-title {
     font-size: clamp(42px, 10vw, 64px);
   }
+
+  /* ---------- SOCIAL ICONS (ADD) ---------- */
+.social-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 10px 0 6px;
 }
 
+.social-links a{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease;
+}
+
+.social-links a:hover{
+  background: var(--panel);
+  transform: translateY(-2px);
+  border-color: rgba(109, 40, 217, 0.3);
+}
+
+.social-links svg{
+  width: 20px;
+  height: 20px;
+  fill: var(--purple);
+}
+}
