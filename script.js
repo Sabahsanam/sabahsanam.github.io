@@ -1,46 +1,54 @@
-const texts = [
-  "I build clean, user-focused web experiences.",
-  "I love to code and design UI/UX",
-  "I bring ideas to life through code."
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const texts = [
+    "I build clean, user-focused web experiences.",
+    "I love to code and design UI/UX",
+    "I bring ideas to life through code."
+  ];
 
-const typingEl = document.getElementById("typing");
-
-let textIndex = 0;     // which sentence
-let charIndex = 0;     // which character
-let isDeleting = false;
-
-function tick() {
-  const current = texts[textIndex];
-
-  // Type or delete
-  if (!isDeleting) {
-    charIndex++;
-  } else {
-    charIndex--;
+  const el = document.getElementById("typing");
+  if (!el) {
+    console.error("No element found with id='typing'");
+    return;
   }
 
-  // Render
-  typingEl.textContent = current.substring(0, charIndex);
+  let textIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
 
-  // Timing
-  let delay = isDeleting ? 40 : 70;
+  const TYPE_SPEED = 55;
+  const DELETE_SPEED = 30;
+  const HOLD_TIME = 900;
 
-  // If finished typing, pause then start deleting
-  if (!isDeleting && charIndex === current.length) {
-    delay = 1400;          // pause at full sentence
-    isDeleting = true;
+  function tick() {
+    const current = texts[textIndex];
+
+    if (!deleting) {
+      charIndex++;
+      el.textContent = current.slice(0, charIndex);
+
+      if (charIndex === current.length) {
+        setTimeout(() => {
+          deleting = true;
+          tick();
+        }, HOLD_TIME);
+        return;
+      }
+
+      setTimeout(tick, TYPE_SPEED);
+    } else {
+      charIndex--;
+      el.textContent = current.slice(0, charIndex);
+
+      if (charIndex === 0) {
+        deleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(tick, 250);
+        return;
+      }
+
+      setTimeout(tick, DELETE_SPEED);
+    }
   }
 
-  // If finished deleting, move to next sentence
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    textIndex = (textIndex + 1) % texts.length; // <-- rotates through all 3
-    delay = 350;           // small pause before typing next
-  }
-
-  setTimeout(tick, delay);
-}
-
-// Start when page loads
-tick();
+  tick();
+});
