@@ -24,6 +24,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://sabahafroz.com/sabah.jpg" />
 
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+
   <link rel="canonical" href="https://sabahafroz.com" />
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -150,7 +157,7 @@
             />
 
             <div class="portrait-caption">
-              <strong>Designing with empathy.</strong>
+              <strong>Designing with purpose.</strong>
               <span>Building with intention.</span>
             </div>
           </div>
@@ -556,7 +563,7 @@
 
       <p>
         My favorite projects live where
-        <strong>technology, creativity, and empathy</strong>
+        <strong>technology, creativity, and impact</strong>
         meet.
       </p>
     </div>
@@ -614,18 +621,18 @@
 
                   <div class="jobping-metrics">
                     <div>
-                      <strong>ATS</strong>
-                      <span>Career sources</span>
+                      <strong>~1,000</strong>
+                      <span>Companies tracked</span>
                     </div>
 
                     <div>
-                      <strong>24/7</strong>
-                      <span>Automated checks</span>
+                      <strong>2</strong>
+                      <span>ATS sources</span>
                     </div>
 
                     <div>
-                      <strong>New</strong>
-                      <span>Matched roles</span>
+                      <strong>Auto</strong>
+                      <span>Senior roles filtered</span>
                     </div>
                   </div>
 
@@ -636,13 +643,13 @@
                     </span>
 
                     <span>
-                      <b>Associate Developer</b>
+                      <b>Data Analyst</b>
                       <small>Entry-level match</small>
                     </span>
 
-                    <span>
-                      <b>Product Engineer</b>
-                      <small>New role detected</small>
+                    <span class="is-filtered">
+                      <b>Senior Engineer</b>
+                      <small>Filtered out</small>
                     </span>
                   </div>
                 </div>
@@ -657,19 +664,21 @@
               <h3>Job Ping</h3>
 
               <p>
-                A job-monitoring platform built to continuously check company
-                career sites and applicant-tracking systems for newly posted
-                roles. It filters openings against targeted job criteria,
-                remembers previously seen listings to avoid duplicate alerts,
-                and surfaces relevant new opportunities without requiring
-                constant manual searching.
+                A Python automation platform that monitors roughly 1,000
+                company career pages through Greenhouse and Lever, normalizing
+                every posting into a consistent schema — title, company,
+                location, and employment type. A classification layer filters
+                for entry-level and new-grad roles in target categories while
+                automatically excluding senior, staff, and lead-level
+                postings, so only relevant matches surface.
               </p>
 
               <div class="project-highlight">
                 <strong>Built for scale</strong>
                 <span>
-                  Designed around a growing company-monitoring pipeline with
-                  reusable connectors for different career-site providers.
+                  A scalable ingestion pipeline handles duplicate postings,
+                  inconsistent company-specific formats, and external API
+                  failures across hundreds of sources without manual cleanup.
                 </span>
               </div>
 
@@ -969,10 +978,76 @@
     <div class="career-timeline">
       <div class="timeline-line" aria-hidden="true"></div>
 
-      <!-- BAXTER -->
+      <!-- WEB DEVELOPER -->
       <article class="career-item career-item-left reveal-card">
         <div class="timeline-marker">
           <span>01</span>
+        </div>
+
+        <div class="experience-3d-card experience-webdev" data-tilt>
+          <div class="experience-card-shine"></div>
+
+          <div class="experience-card-header">
+            <div class="company-icon">
+              <span>WD</span>
+            </div>
+
+            <div class="experience-date-badge">
+              2026 — Present
+            </div>
+          </div>
+
+          <div class="experience-card-content">
+            <p class="experience-type">Current Role</p>
+
+            <h3>Web Developer</h3>
+
+            <div class="company-row">
+              <strong>NC State Engineering IT</strong>
+              <span>Raleigh, NC</span>
+            </div>
+
+            <p class="experience-summary">
+              Supporting web applications and internal IT systems used
+              across NC State Engineering.
+            </p>
+
+            <ul class="experience-points">
+              <li>
+                Maintaining web applications using PHP, Laravel/Laradock,
+                MySQL, Docker, Git, Node.js, and Yarn.
+              </li>
+
+              <li>
+                Contributing to development workflows with growing
+                exposure to secure configuration management and
+                environment hardening.
+              </li>
+
+              <li>
+                Collaborating with Engineering IT staff to troubleshoot
+                issues and configure development environments.
+              </li>
+            </ul>
+
+            <div class="experience-tags">
+              <span>PHP</span>
+              <span>Laravel</span>
+              <span>Docker</span>
+              <span>Security</span>
+            </div>
+          </div>
+
+          <div class="experience-corner-code" aria-hidden="true">
+            &lt;/&gt;
+          </div>
+        </div>
+      </article>
+
+      <!-- BAXTER -->
+      <article class="career-item career-item-right reveal-card">
+        <div class="timeline-marker">
+          <span>02</span>
         </div>
 
         <div class="experience-3d-card experience-baxter" data-tilt>
@@ -984,14 +1059,14 @@
             </div>
 
             <div class="experience-date-badge">
-              May 2026 — Aug 2026
+              June 2026 — Aug 2026
             </div>
           </div>
 
           <div class="experience-card-content">
             <p class="experience-type">Software Engineering Internship</p>
 
-            <h3>Software Engineering Intern</h3>
+            <h3>R&amp;D Software Intern</h3>
 
             <div class="company-row">
               <strong>Baxter International Inc.</strong>
@@ -999,32 +1074,35 @@
             </div>
 
             <p class="experience-summary">
-              Building an automated system that supports medical-device
+              Built an automated system supporting medical-device
               software risk analysis and documentation.
             </p>
 
             <ul class="experience-points">
               <li>
-                Developing software for risk analysis aligned
-                with ISO 14971 and IEC 62304.
+                Developed Python-based AI agents to analyze source code,
+                requirements, and technical documentation for hazards
+                and compliance concerns.
               </li>
 
               <li>
-                Designing automated workflows that analyze source code,
-                requirements, and technical documents.
+                Integrated AI-driven risk-detection workflows into CI/CD
+                pipelines for automated analysis throughout the
+                development lifecycle.
               </li>
 
               <li>
-                Building automated SHA and DFMEA workflows with
-                Git-integrated risk updates.
+                Built an MCP-based context layer connecting ~26
+                repositories into PostgreSQL with incremental updates
+                on pull requests and merges.
               </li>
             </ul>
 
             <div class="experience-tags">
-              <span>Automation</span>
-              <span>Risk Analysis</span>
               <span>Python</span>
-              <span>Git</span>
+              <span>AI Agents</span>
+              <span>MCP</span>
+              <span>PostgreSQL</span>
             </div>
           </div>
 
@@ -1035,9 +1113,9 @@
       </article>
 
       <!-- NC STATE TECH SUPPORT -->
-      <article class="career-item career-item-right reveal-card">
+      <article class="career-item career-item-left reveal-card">
         <div class="timeline-marker">
-          <span>02</span>
+          <span>03</span>
         </div>
 
         <div class="experience-3d-card experience-ncsu" data-tilt>
@@ -1100,9 +1178,9 @@
       </article>
 
       <!-- UDPLATFORMS -->
-      <article class="career-item career-item-left reveal-card">
+      <article class="career-item career-item-right reveal-card">
         <div class="timeline-marker">
-          <span>03</span>
+          <span>04</span>
         </div>
 
         <div class="experience-3d-card experience-udp" data-tilt>
@@ -1164,9 +1242,9 @@
       </article>
 
       <!-- RESIDENT ADVISOR -->
-      <article class="career-item career-item-right reveal-card">
+      <article class="career-item career-item-left reveal-card">
         <div class="timeline-marker">
-          <span>04</span>
+          <span>05</span>
         </div>
 
         <div class="experience-3d-card experience-ra" data-tilt>
